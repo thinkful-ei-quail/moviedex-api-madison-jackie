@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const movies = require('./movie.js');
+const movies = require('./movieList.js');
 
 app.get('/movie', (req, res) => {
     const { genre, country, avg_vote } = req.query;
