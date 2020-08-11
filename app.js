@@ -1,9 +1,9 @@
 require('dotenv').config()
 const cors = require('cors')
 const helmet = require('helmet');
+const morgan = require('morgan');
 const express = require('express');
 const movies = require('./movieList.js');
-const morgan = require('morgan');
 const app = express();
 app.use(morgan('dev'));
 app.use(cors());
@@ -34,7 +34,6 @@ app.get('/movie', (req, res) => {
         response = response.filter(movie => 
             parseInt(movie.avg_vote) >= parseInt(avg_vote))
     }
-    
     
     res.json(response)
 });
